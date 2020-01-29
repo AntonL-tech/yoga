@@ -94,4 +94,32 @@ window.addEventListener('DOMContentLoaded', function() {
     }
     setClock('timer', deadline);
 
+
+    // Modal
+
+
+    let modal = document.querySelector('.overlay'),
+        more = document.querySelector('.more'),
+        close = document.querySelector('.popup-close'),
+        tamMore = document.querySelectorAll('.description-btn');
+
+    more.addEventListener('click', showModal);
+
+    close.addEventListener('click', hideModal);
+
+    for (let i = 0; i < tamMore.length; i++) {
+        tamMore[i].addEventListener('click', showModal);
+    }
+
+
+    function showModal() {
+        modal.style.display = 'block';
+        document.body.style.overflow = 'hidden';
+    }
+
+    function hideModal() {
+        modal.style.display = 'none';
+        document.body.style.overflow = '';
+    }
+
 });
